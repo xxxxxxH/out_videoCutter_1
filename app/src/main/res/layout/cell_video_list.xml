@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMainClVideoList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlack"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:padding="@dimen/five_dp">
+
+    <RelativeLayout
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/five_dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <net.widget.SquareImageView
+            android:id="@+id/imgThumbClMyVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPlayClMyVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/play_button"
+            android:visibility="invisible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDurationClMyVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/five_dp"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/five_dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/five_dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNameClMyVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/five_dp"
+                android:textColor="@color/colorWhite" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSizeClMyVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/five_dp"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgEditClMyVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/five_dp"
+                android:visibility="gone"
+                android:padding="@dimen/five_dp"
+                android:src="@mipmap/baseline_edit_white_24" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgDeleteClMyVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/five_dp"
+                android:padding="@dimen/five_dp"
+                android:src="@mipmap/baseline_delete_white_24" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgShareClMyVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/five_dp"
+                android:padding="@dimen/five_dp"
+                android:src="@mipmap/baseline_share_white_24" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
