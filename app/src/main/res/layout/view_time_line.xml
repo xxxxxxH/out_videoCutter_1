@@ -115,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@mipmap/black_button_background"
+                    android:background="@drawable/black_button_background"
                     android:text="@string/save"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />

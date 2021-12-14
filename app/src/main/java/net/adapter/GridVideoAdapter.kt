@@ -60,21 +60,18 @@ class GridVideoAdapter(
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        try {
-            val aClass: VideoClass = videoClassArrayList[position]
-            Glide.with(context)
-                .load(aClass.ThumbBitmap)
-                .into(holder.imgThumb)
-            val duration: String = aClass.DisplayDuration
-            if (duration != null && !duration.isEmpty()) {
-                holder.tvDuration.text = duration
-            } else {
-                val defDuration = "00:00:00"
-                holder.tvDuration.text = defDuration
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
+        val aClass: VideoClass = videoClassArrayList[position]
+        Glide.with(context)
+            .load(aClass.ThumbBitmap)
+            .into(holder.imgThumb)
+        val duration: String = aClass.DisplayDuration
+        if (duration != null && !duration.isEmpty()) {
+            holder.tvDuration.text = duration
+        } else {
+            val defDuration = "00:00:00"
+            holder.tvDuration.text = defDuration
         }
+
         holder.rlMain.tag = position
         holder.imgThumb.setTag(R.string.adapter_key, position)
         holder.imgPlay.tag = position

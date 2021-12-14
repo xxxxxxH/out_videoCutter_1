@@ -58,11 +58,6 @@ class MainActivity : BaseActivity(), View.OnClickListener,
         initViews()
         checkPermissionAndLoadVideos()
         successCall()
-        try {
-            //subScribeToFirebaseTopic();
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
         llAdView = findViewById(R.id.llAdView)
         llAdViewFacebook = findViewById(R.id.llAdViewFacebook)
         llAdView!!.visibility = View.GONE

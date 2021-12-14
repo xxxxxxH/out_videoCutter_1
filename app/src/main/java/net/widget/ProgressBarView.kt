@@ -12,18 +12,28 @@ import net.basicmodel.R
 import net.interfaces.OnProgressVideoListener
 import net.interfaces.OnRangeSeekBarListener
 
-class ProgressBarView(
-    context: Context,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) :
-    View(context, attrs, defStyleAttr), OnRangeSeekBarListener, OnProgressVideoListener {
+class ProgressBarView:View, OnRangeSeekBarListener, OnProgressVideoListener {
     private var mProgressHeight = 0
     private var mViewWidth = 0
     private val mBackgroundColor = Paint()
     private val mProgressColor = Paint()
     private var mBackgroundRect: Rect? = null
     private var mProgressRect: Rect? = null
+    constructor(context: Context) : super(context) {
+        init()
+    }
+
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        init()
+    }
+
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+        init()
+    }
     private fun init() {
         val lineProgress = ContextCompat.getColor(context, R.color.line_color)
         val lineBackground = ContextCompat.getColor(context, R.color.line_color)
@@ -104,9 +114,5 @@ class ProgressBarView(
             Rect(mBackgroundRect!!.left, mBackgroundRect!!.top, newValue, mBackgroundRect!!.bottom)
         }
         invalidate()
-    }
-
-    init {
-        init()
     }
 }

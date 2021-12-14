@@ -14,12 +14,7 @@ import net.entity.Thumb
 import net.interfaces.OnRangeSeekBarListener
 import java.util.*
 
-class RangeSeekBarView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) :
-    View(context, attrs, defStyleAttr) {
+class RangeSeekBarView :View{
     private var mHeightTimeLine = 0
     private var mThumbs: List<Thumb>? = null
     private var mListeners: MutableList<OnRangeSeekBarListener>? = null
@@ -33,6 +28,21 @@ class RangeSeekBarView @JvmOverloads constructor(
     private var mFirstRun = false
     private val mShadow = Paint()
     private val mLine = Paint()
+    constructor(context: Context) : super(context) {
+        init()
+    }
+
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        init()
+    }
+
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+        init()
+    }
     private fun init() {
         mThumbs = Thumb.initThumbs(resources)
         mThumbWidth = Thumb.getWidthBitmap(mThumbs!!).toFloat()
@@ -347,9 +357,5 @@ class RangeSeekBarView @JvmOverloads constructor(
 
     companion object {
         private val TAG = RangeSeekBarView::class.java.simpleName
-    }
-
-    init {
-        init()
     }
 }

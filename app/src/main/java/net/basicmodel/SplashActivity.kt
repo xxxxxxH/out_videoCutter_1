@@ -45,7 +45,6 @@ class SplashActivity : AppCompatActivity(), CallbackListener {
         Handler().postDelayed({
             val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(mainIntent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()
         }, time.toLong())
     }

@@ -20,7 +20,7 @@ import net.utils.CommonConstants
 import net.utils.CommonUtilities
 import java.util.*
 
-open class BaseActivity : AppCompatActivity(), OnItemClickListener {
+abstract class BaseActivity : AppCompatActivity(), OnItemClickListener {
     var context: Context? = null
     var drawerLayout: DrawerLayout? = null
     override fun setContentView(layoutResID: Int) {
@@ -103,7 +103,7 @@ open class BaseActivity : AppCompatActivity(), OnItemClickListener {
             return position.toLong()
         }
 
-        override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             var convertView = convertView
             convertView = LayoutInflater.from(context).inflate(R.layout.cell_drawer_item, null)
             val imgItem: AppCompatImageView = convertView.findViewById(R.id.imgItem)
